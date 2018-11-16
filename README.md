@@ -1,4 +1,4 @@
-# React Starter
+# Redux To Do List
 
 > To do list build with ReactJS and ReduxJS
 
