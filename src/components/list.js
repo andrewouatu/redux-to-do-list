@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getListData } from '../actions';
 import NavButton from './nav_button';
 
@@ -8,10 +9,12 @@ class List extends Component {
         this.props.getListData();
     }
     render(){
-        console.log('List Props:', this.props);
-
         const listElements = this.props.todos.map( item => {
-            return <li key={item._id} className="collection-item">{item.title}</li>
+            return (
+                    <li key={item._id} className="collection-item">
+                        <Link style={{display: 'block' , height: '100%'}} to={`/item/${item._id}`}>{item.title}</Link>
+                    </li>
+            )
         });
 
         return (
